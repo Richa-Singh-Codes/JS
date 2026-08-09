@@ -33,3 +33,27 @@ const myFunction = function(){
     console.log("Hello Js");
     
 }
+
+
+// Memory - 2 types
+// i. Stack (It is used for All premitive data types)  --> get copy of original value   
+// ii. Heap (All Non-Premitive)  --> get reference of original value
+
+let myYoutubename = "richadotcom"
+let anothername = myYoutubename  // will get copy of myYoutubename
+anothername = "learnwithricha"
+
+console.log(myYoutubename);
+console.log(anothername);
+
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne  // will get reference of userOne
+
+userTwo.email = "mahi@gmail.com"
+console.log(userOne.email);
+console.log(userTwo.email);
