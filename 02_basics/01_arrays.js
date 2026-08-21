@@ -33,7 +33,7 @@ console.log(typeof newArr);  // --> String
 
 console.log("A ", myArr);
 
-const myn1 = myArr.slice(1,3)
+const myn1 = myArr.slice(1,3)   // excludes 3th index
 console.log(myn1);
 
 console.log("B ", myArr);
