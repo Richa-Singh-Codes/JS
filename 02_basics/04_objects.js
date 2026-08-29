@@ -1,4 +1,4 @@
-const tinderUser = new Object()   // singleton object
+// const tinderUser = new Object()   // singleton object
 /*Here we're explicitly saying: Create a new object using the Object CONSTRUCTOR."*/
 
 const tinderUser = {}    // non-singleton object
@@ -19,7 +19,7 @@ const regularUser = {
         }
     }
 }
-console.log(regularUser.fullname.userFullName.firstname);
+// console.log(regularUser.fullname.userFullName.firstname);
 
 /**************************************************Merge Objects************************************************************/
 const obj1 = {1: "a", 2: "b"}
@@ -31,7 +31,7 @@ const obj4 = {5: "c", 6: "d"}
 // const obj3 = Object.assign({},obj1, obj2, obj4) // Here {empty object} -> will work as TARGET and obj1,obj2.. will work as SOURCE
 
 const obj3 = {...obj1, ...obj2, ...obj4}  // SPREAD operator --> mostly used
-console.log(obj3);
+// console.log(obj3);
 
 /************ When values will come from the DataBase --> It will mostly be in the form of ARRAY OF OBJECTS **********/
 const users = [
@@ -54,8 +54,8 @@ const users = [
 ]
 
 // Loop through or print the value
-console.log(users[1].email)
-
+// console.log(users[1].email)
+/*
 users.map((user) => {
     console.log(user);  // map() is commonly used to access each object and return something from it.
 });
@@ -63,11 +63,64 @@ users.map((user) => {
 users.map((user) => {
     console.log(user.email);    // Print only a particular property i.e. -->email
 });
+*/
+// console.log(tinderUser);
 
-console.log(tinderUser);
+// console.log(Object.keys(tinderUser));    // Its datatype will be--> Array
+// console.log(Object.values(tinderUser));   
+// console.log(Object.entries(tinderUser));  
 
-console.log(Object.keys(tinderUser));    // Its datatype will be--> Array
-console.log(Object.values(tinderUser));   
-console.log(Object.entries(tinderUser));  
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));// Before using, To check whether this property(isLoggedIn) is available in that object(tinderUser)
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));// Before using, To check whether this property(isLoggedIn) is available in that object(tinderUser)
+
+/*********** Object de-structure ************/
+
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "Hitesh"
+}
+// const {courseInstructor} = course
+// console.log(courseInstructor);
+
+
+// If we feel the "courseInstructor" is too long we can rename it whatever we want
+
+const {courseInstructor: instructor} = course  // object de-structure
+console.log(instructor);
+
+
+/**************************************** API ************************************************ */
+// JSON --> what do we get when there is an API call from JSON
+/* In the form of objects
+{
+    "name": "mahi",
+    "coursename": "js in Hindi",
+    "price": "free"
+}
+*/
+
+// Sometimes we get arrays in the form of Arrays
+[
+    {},
+    {},
+    {}
+]
+
+
+
+
+
+/* Part of REACT --> In react, there is by default PROPS so instead of everytime writing--> props.company, props.logo
+There also comes a concept of de-structuring
+
+const navbar = (props.company) => {      // not recommended
+
+}
+
+const navbar = ({company}) => {
+
+}
+navbar(company = "Code Smashers")
+
+*/
